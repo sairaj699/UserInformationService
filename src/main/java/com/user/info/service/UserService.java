@@ -47,7 +47,6 @@ public class UserService implements IUserService {
 		List<Images> images= user.getImages();
 	    Images image = new Images();
 	    image.setImg_link(imgurResponseVO.getData().getLink());
-	    //image.setUser_id(user.getUser_id());
 	    images.add(image);
 	    user.setImages(images);
 	    userRepo.save(user);
