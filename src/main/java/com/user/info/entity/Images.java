@@ -15,7 +15,6 @@ public class Images {
 	@Id
 	@GeneratedValue
 	private int img_id;
-	//private int user_id;
 	private String img_link;
 
 }
