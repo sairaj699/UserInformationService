@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -31,21 +29,12 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue
 	private int user_id;
-	@NotEmpty
-	@NotNull
 	@Column(unique=true)
 	private String userName;
-	@NotEmpty
-	@NotNull
 	private String passWord;
 	@Email
-	@NotEmpty
-	@NotNull
 	private String email;
-	@NotEmpty
-	@NotNull
 	private String phoneNumber;
-	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name="user_images", joinColumns = @JoinColumn(name ="user_id") )
 	private List<Images> images;
